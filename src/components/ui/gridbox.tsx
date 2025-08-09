@@ -9,7 +9,7 @@ export function GridBackgroundDemo({ children }: GridBackgroundDemoChild) {
       <div
         className={cn(
           "absolute inset-0 w-full h-full",
-          "[background-size:10vw_10vw]", // Ukuran grid responsif
+          "[background-size:10vw_10vw]",
           "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
           "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
         )}

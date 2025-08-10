@@ -1,13 +1,17 @@
-'use server'
+'use client'
 
 import React from 'react'
 import { Spotlight } from './ui/spotlight'
 import { GridBackgroundDemo } from './ui/gridbox'
 import { TextGenerateEffect } from './ui/text-generate-effect'
 import MagicButton from './ui/magic-button'
-import { FaLocationArrow } from 'react-icons/fa'
+import { FaLocationArrow } from 'react-icons/fa';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onShowMore: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onShowMore }) => {
   return (
     <div className='pb-20 pt-36'>
       <div className=''>
@@ -17,16 +21,16 @@ const Hero: React.FC = () => {
       </div>
       <div className='flex flex-col items-center'>
         <GridBackgroundDemo>
-          <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='Transforming Concepts into Seamless Expriences'/>
+          <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='Transforming Concepts into Seamless User Expriences'/>
         </GridBackgroundDemo>
-        <p className='text-center z-10'>Hello, My name is Zani, I&apos;m a Fullstack Developer based in Jakarta.</p>
-        <a href="#about" className='my-4'>
+        <p className='font-sans text-center z-10'>Hello, My name is Zani, I&apos;m a Fullstack Developer based in Jakarta.</p>
+        <div className='my-4' onClick={onShowMore}>
           <MagicButton 
-            title={`Let's to know about me`} 
+            title={`Ayo cari tau saya lebih lanjut`} 
             icon={ <FaLocationArrow /> } 
             position='right'
           />
-        </a>
+        </div>
       </div>
     </div>
   )

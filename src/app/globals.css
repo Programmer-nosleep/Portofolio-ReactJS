@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --font-sans: 'Geist', sans-serif;
   --black-color-default: #000000;
   --weight-color-100: #000319;
 }
@@ -125,6 +126,12 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-sans);
   }
 }
 
